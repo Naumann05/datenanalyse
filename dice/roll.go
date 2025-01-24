@@ -1,16 +1,22 @@
 package dice
 
+import (
+	"math/rand"
+)
+
 // RollSingleDieOnce simuliert einen Würfelwurf: Die Funktion liefert eine Zufallszahl zwischen 1 und 6.
 func RollSingleDieOnce() int {
-	// TODO
-	return 0
+	return rand.Intn(6) + 1
 }
 
 // RollMultipleDiceOnce simuliert das einmalige Würfeln von zwei Würfeln.
 // Die Funktion erwartet die Anzahl der Würfel und liefert die Summe der Würfelaugen.
 func RollMultipleDiceOnce(d int) int {
 	sum := 0
-	// TODO
+	for i := 0; i < d; i++ {
+		x := rand.Intn(6) + 1
+		sum += x
+	}
 	return sum
 }
 
@@ -18,8 +24,12 @@ func RollMultipleDiceOnce(d int) int {
 // Die Funktion erwartet die Anzahl d der Würfel und die Anzahl n der Würfe.
 // Die Funktion würfelt n mal und liefert eine Liste mit den Ergebnissen.
 func RollMany(d, n int) []int {
-	rollResults := make([]int, n)
-	// TODO
+	var rollResults []int
+	for i := 0; i < n; i++ {
+		for i := 0; i < d; i++ {
+			rollResults = append(rollResults, rand.Intn(6)+1)
+		}
+	}
 	return rollResults
 }
 

@@ -1,10 +1,15 @@
 package main
 
+import "fmt"
+
 // readUserInput fragt den Benutzer nach der Anzahl der Würfe und der Anzahl der Würfel.
 // Die Funktion liefert beide Werte zurück.
 func readUserInput() (int, int) {
 	var d, n int
-	// TODO
+	fmt.Print("Gib die Anzahl der Würfe ein: ")
+	fmt.Scan(&d)
+	fmt.Println("Gib die Anzahl der Würfe ein: ")
+	fmt.Scan(&n)
 	return d, n
 }
 
