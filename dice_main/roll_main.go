@@ -15,7 +15,7 @@ func readUserInput() (int, int) {
 
 // printDiceStatistics berechnet die Statistik für die Würfelwürfe und gibt sie aus.
 func printDiceStatistics(rollResults []int) {
-	// TODO
+
 }
 
 // main kombiniert die anderen Funktionen zu einem Programm.

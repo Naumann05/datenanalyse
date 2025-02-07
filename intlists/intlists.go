@@ -4,11 +4,12 @@ package intlists
 // Funktioniert nur für nicht-leere Listen.
 func Min(values []int) int {
 	min := values[0]
-	/* Hinweis:
-	   Verwenden Sie eine for-Schleife, um das Minimum zu berechnen.
-	   Jedes Mal, wenn Sie ein neues Minimum finden, speichern Sie es in der Variablen min.
-	*/
-	// TODO
+	for i := 0; i+1 <= len(values); i++ {
+		if values[i] < min {
+			min = values[i]
+		}
+	}
+
 	return min
 }
 
@@ -16,10 +17,12 @@ func Min(values []int) int {
 // Funktioniert nur für nicht-leere Listen.
 func Max(values []int) int {
 	max := values[0]
-	/* Hinweis:
-	   Gehen Sie analog zu Min vor.
-	*/
-	// TODO
+	for i := 0; i+1 <= len(values); i++ {
+		if values[i] > max {
+			max = values[i]
+		}
+	}
+
 	return max
 }
 
@@ -28,13 +31,12 @@ func Max(values []int) int {
 // dem Minimum und dem Maximum der Messreihe.
 func ValueRange(values []int) []int {
 	result := []int{}
-	/* Hinweis:
-	   Verwenden Sie die Funktionen Min und Max, um das Minimum und das Maximum
-	   der Messreihe zu berechnen.
-	   Fügen Sie dann in einer Schleife alle Zahlen zwischen
-	   Minimum und Maximum zu result hinzu.
-	*/
-	// TODO
+	max := Max(values)
+	min := Min(values)
+	for i := 0; i+min <= max; i++ {
+		result = append(result, i+min)
+	}
+
 	return result
 
 }
@@ -43,7 +45,9 @@ func ValueRange(values []int) []int {
 // Die Funktion liefert die Summe aller Werte.
 func Sum(values []int) int {
 	sum := 0
-	// TODO
+	for i := 0; i < len(values); i++ {
+		sum = sum + values[i]
+	}
 	return sum
 }
 
@@ -51,6 +55,8 @@ func Sum(values []int) int {
 // Die Funktion liefert das Produkt aller Werte.
 func Product(values []int) int {
 	product := 1
-	// TODO
+	for i := 0; i < len(values); i++ {
+		product = product * values[i]
+	}
 	return product
 }
